@@ -12,16 +12,18 @@ import { Action } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { GlobalState } from "./types";
 
-export const getDataRequestAction = (): ActionTypes => ({
+import axios from "axios";
+
+const getDataRequestAction = (): ActionTypes => ({
     type: GET_DATA_REQUEST,
 });
 
-export const getDataSuccessAction = (payload: Article[]): ActionTypes => ({
+const getDataSuccessAction = (payload: Article[]): ActionTypes => ({
     type: GET_DATA_SUCCESS,
     payload,
 });
 
-export const getDataFailAction = (payload: object): ActionTypes => ({
+const getDataFailAction = (payload: object): ActionTypes => ({
     type: GET_DATA_FAIL,
     payload,
 });
@@ -35,10 +37,20 @@ export const getData = (): ThunkAction<
     void,
     GlobalState,
     unknown,
-    Action<>
-> => async (dispatch) => {
+    Action<string>
+> => async (dispatch, getState) => {
     dispatch(getDataRequestAction());
     try {
+        const { formData } = getState();
+        console.log("formData in action = ", formData);
+
+        // todo fetch config
+        const url =
+            "https://newsapi.org/v2/top-headlines?q=trump&apiKey=9c84424f051843108bca2fea4726ae0c";
+
+        const response = await axios.get(url);
+        console.log(response);
+        dispatch(getDataSuccessAction(response.data.articles));
     } catch (error) {
         console.error("Something went wrong");
         dispatch(getDataFailAction(error));
