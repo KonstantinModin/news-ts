@@ -42,11 +42,14 @@ export const getData = (): ThunkAction<
     dispatch(getDataRequestAction());
     try {
         const { formData } = getState();
-        console.log("formData in action = ", formData);
+        const params = Object.entries(formData)
+            .filter((e) => ("" + e[1]).trim())
+            .map((a) => a.join("="))
+            .join("&");
+        console.log(params);
 
         // todo fetch config
-        const url =
-            "https://newsapi.org/v2/top-headlines?country=us&apiKey=9c84424f051843108bca2fea4726ae0c";
+        const url = `https://newsapi.org/v2/top-headlines?${params}&apiKey=9c84424f051843108bca2fea4726ae0c`;
 
         const response = await axios.get(url);
         console.log(response);

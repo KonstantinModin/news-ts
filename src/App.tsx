@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { getData } from './redux/actions';
-import './App.css';
+import { useDispatch } from 'react-redux';
 import Header from './Header';
 import Form from './FormComponent';
 import Content from './Content';
+import './App.css';
 
-
-function App() {
+const App: React.FC = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
