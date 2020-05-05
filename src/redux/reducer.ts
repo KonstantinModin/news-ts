@@ -7,16 +7,18 @@ import {
     SUBMIT_FORM,
 } from "./types";
 
+export const FORM_INITIAL_STATE = {
+    country: "",
+    category: "",
+    q: "john",
+    pageSize: 20,
+};
+
 const INITIAL_STATE: GlobalState = {
     loading: false,
     data: [],
     error: null,
-    formData: {
-        country: "",
-        category: "",
-        q: "trump",
-        pageSize: 20,
-    },
+    formData: FORM_INITIAL_STATE,
 };
 
 const reducer = (state = INITIAL_STATE, action: ActionTypes): GlobalState => {

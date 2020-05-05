@@ -12,13 +12,30 @@
     overflow: hidden;
 }
 
+.App .Content .Article h3 {
+    color: rgb(226, 19, 130);
+}
+
 .App .Content .Article .header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    background-color: rgb(99, 10, 57);
+}
+
+.App .Content .Article .header a {
+    color: cornflowerblue;
 }
 
 .App .Content .Article .body {
+    /* text-align: justify; */
+    /* border: 1px solid red; */
+}
+
+.App .Content .Article .body p {
+    text-align: justify;
+    font-size: 0.9rem;
+    margin-right: 1rem;
 }
 
 .App .Content .Article .body img {

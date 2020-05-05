@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
         <header className="App-header">
             <h1>News from all over the world</h1>
