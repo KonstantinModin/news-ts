@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
+import './FormComponent.css';
 
 const FORMIK_INITIAL_STATE = {
     country: "",

@@ -1,0 +1,28 @@
+.App .Content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.App .Content .Article {
+    border: 1px solid white;
+    margin: 2px;
+    width: 49%;
+    overflow: hidden;
+}
+
+.App .Content .Article .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.App .Content .Article .body {
+}
+
+.App .Content .Article .body img {
+    max-width: 200px;
+    float: left;
+    margin: 1rem;
+}

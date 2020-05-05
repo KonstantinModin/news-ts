@@ -21,7 +21,7 @@ export interface FormDataType {
 
 export interface GlobalState {
     loading: boolean;
-    data: Article[] | [];
+    data: Article[] | null;
     error: object | null;
     formData: FormDataType;
 }

@@ -46,7 +46,7 @@ export const getData = (): ThunkAction<
 
         // todo fetch config
         const url =
-            "https://newsapi.org/v2/top-headlines?q=trump&apiKey=9c84424f051843108bca2fea4726ae0c";
+            "https://newsapi.org/v2/top-headlines?country=us&apiKey=9c84424f051843108bca2fea4726ae0c";
 
         const response = await axios.get(url);
         console.log(response);
