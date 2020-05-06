@@ -8,12 +8,12 @@ import './Content.css';
 const Content: React.FC = () => {
 
     const state = useSelector((s: GlobalState) => s);
-    const { loading, data, error } = state;
+    const { loading, data, error, formData: { country } } = state;
 
     return (
         <div className="Content">
             {loading ? (<Spinner />) : error ? <h2>Error happend</h2> : (
-                data && data.map(({ author, title, url, urlToImage: img, publishedAt, content }, i) => (
+                data && data.map(({ author, title, url, description, urlToImage: img, publishedAt, content }, i) => (
                     <div key={i} className='Article'>
                         <h3>{title}</h3>
                         <div className="header">
@@ -23,7 +23,7 @@ const Content: React.FC = () => {
                         </div>
                         <div className="body">
                             <img src={img} alt="title" />
-                            <p>{content}</p>
+                            <p>{country === 'ru' ? description : content}</p>
                         </div>
                     </div>
                 ))
