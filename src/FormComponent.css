@@ -9,7 +9,8 @@
     display: flex;
     flex-direction: column;
 }
-.App form div input {
+.App form div input,
+select {
     width: calc(80vw / 4);
 }
 
@@ -17,6 +18,10 @@
     /* border: 1px solid red; */
     text-transform: capitalize;
     text-align: left;
+}
+
+.App form div .error {
+    color: red;
 }
 
 .App form button {

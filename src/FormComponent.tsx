@@ -17,8 +17,20 @@ const FormComponent: React.FC<{}> = () => {
         dispatch(getData());
     }
 
+    // type FormikErrorsType = {
+    //     country?
+    // }
+
+    const validate = (values: FormDataType) => {
+        const errors: { q?: String } = {};
+        if (!values.country && !values.category && !values.q.trim()) {
+            errors.q = "You need to select something"
+        }
+        return errors
+    }
+
     return (
-        <Formik initialValues={FORM_INITIAL_STATE} onSubmit={submitHandler} >
+        <Formik initialValues={FORM_INITIAL_STATE} onSubmit={submitHandler} validate={validate}>
             {formikBag => (
                 <Form>
                     <div>
@@ -26,9 +38,39 @@ const FormComponent: React.FC<{}> = () => {
                         <Field as="select" name="country">
                             <option value="">not specified</option>
                             <option value="us">USA</option>
+                            <option value="de">Germany</option>
                             <option value="gb">Great Britain</option>
                             <option value="ru">Russia</option>
+                            <option value="ua">Ukraine</option>
                             <option value="it">Italy</option>
+                            <option value="nl">Netherlands</option>
+                            <option value="fr">France</option>
+                            <option value="ar">Argentina</option>
+                            <option value="at">Austria</option>
+                            <option value="au">Australia</option>
+                            <option value="be">Belgium</option>
+                            <option value="br">Brazil</option>
+                            <option value="ca">Canada</option>
+                            <option value="ch">Switzerland</option>
+                            <option value="cn">China</option>
+                            <option value="hk">Hong Kong</option>
+                            <option value="cu">Cuba</option>
+                            <option value="cz">Czech Republic</option>
+                            <option value="eg">Egypt</option>
+                            <option value="id">Indonesia</option>
+                            <option value="il">Israel</option>
+                            <option value="in">India</option>
+                            <option value="jp">Japan</option>
+                            <option value="kr">South Korea</option>
+                            <option value="mx">Mexico</option>
+                            <option value="my">Malasia</option>
+                            <option value="no">Norway</option>
+                            <option value="nz">New Zeland</option>
+                            <option value="pl">Poland</option>
+                            <option value="sa">Saudi Arabia</option>
+                            <option value="sg">Singapore</option>
+                            <option value="tr">Turkey</option>
+                            <option value="za">South Africa</option>
                         </Field>
                     </div>
                     <div>
@@ -47,7 +89,7 @@ const FormComponent: React.FC<{}> = () => {
                     <div>
                         <label htmlFor="q">Keywords or a phrase to search for: </label>
                         <Field type="text" name="q" />
-                        <ErrorMessage name="q" component="div" />
+                        <ErrorMessage className="error" name="q" component="div" />
                     </div>
                     <div>
                         <label htmlFor="pageSize">Select page size:</label>
