@@ -44,4 +44,4 @@ const FormComponent = () => {
     )
 }
 
-export default FormComponent
+export default FormComponent;
