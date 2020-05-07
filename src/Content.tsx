@@ -18,7 +18,7 @@ const Content: React.FC<{}> = () => {
                         <h3>{title}</h3>
                         <div className="header">
                             Source: {author}
-                            <a href={url}>Read source</a>
+                            <a href={url} target="_blank" rel="noopener noreferrer">Read source</a>
                             {moment(publishedAt).fromNow()}
                         </div>
                         <div className="body">

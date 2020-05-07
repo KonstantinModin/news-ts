@@ -11,7 +11,9 @@ export interface Article {
     publishedAt: string;
     content: string;
 }
-
+/* 
+  Type for Formik form
+**/
 export interface FormDataType {
     country: string;
     category: string;

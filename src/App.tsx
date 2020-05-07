@@ -28,7 +28,7 @@ const App: React.FC<{}> = () => {
 
 	return (
 		<div className="App">
-			<Header show={scroll < 500} />
+			<Header show={scroll < 400} />
 			<Content />
 			<Footer />
 		</div>
