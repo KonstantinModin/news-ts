@@ -5,7 +5,7 @@ import { GlobalState } from './redux/types';
 import Spinner from './Spinner';
 import './Content.css';
 
-const Content: React.FC = () => {
+const Content: React.FC<{}> = () => {
 
     const state = useSelector((s: GlobalState) => s);
     const { loading, data, error, formData: { country } } = state;

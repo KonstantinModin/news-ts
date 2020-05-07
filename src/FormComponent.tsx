@@ -4,7 +4,6 @@ import { FormDataType } from './redux/types';
 import { FORM_INITIAL_STATE } from './redux/reducer';
 import { submitFormAction, getData } from './redux/actions';
 import { useDispatch } from 'react-redux';
-import * as Yup from 'yup';
 import './FormComponent.css';
 
 const FormComponent: React.FC<{}> = () => {
@@ -16,10 +15,6 @@ const FormComponent: React.FC<{}> = () => {
         actions.setSubmitting(false);
         dispatch(getData());
     }
-
-    // type FormikErrorsType = {
-    //     country?
-    // }
 
     const validate = (values: FormDataType) => {
         const errors: { q?: String } = {};

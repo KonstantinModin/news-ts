@@ -8,9 +8,9 @@ import {
 } from "./types";
 
 export const FORM_INITIAL_STATE = {
-    country: "",
+    country: "us",
     category: "",
-    q: "john",
+    q: "",
     pageSize: 20,
 };
 

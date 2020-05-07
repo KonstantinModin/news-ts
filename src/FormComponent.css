@@ -1,30 +1,32 @@
-.App form {
+.App .App-header form {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 1rem;
+    width: 100%;
 }
 
-.App form div {
+.App .App-header form div {
     /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
 }
-.App form div input,
+.App .App-header form div input,
 select {
     width: calc(80vw / 4);
 }
 
-.App form div label {
+.App .App-header form div label {
     /* border: 1px solid red; */
     text-transform: capitalize;
     text-align: left;
 }
 
-.App form div .error {
+.App .App-header form div .error {
     color: red;
 }
 
-.App form button {
+.App .App-header form button {
     background-color: burlywood;
     border: none;
     border-radius: 5px;
