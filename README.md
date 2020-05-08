@@ -1,6 +1,6 @@
-# Fetching News from
+# Fetching News from all over the world
 
-## https://newsapi.org/
+## API: https://newsapi.org/
 
 ## Description
 
