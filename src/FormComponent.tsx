@@ -9,8 +9,7 @@ import './FormComponent.css';
 const FormComponent: React.FC<{}> = () => {
     const dispatch = useDispatch();
 
-    const submitHandler = (values: FormDataType, actions: FormikHelpers<FormDataType>) => {
-        console.log('Submit=', values);
+    const submitHandler = (values: FormDataType, actions: FormikHelpers<FormDataType>) => {        
         dispatch(submitFormAction(values));
         actions.setSubmitting(false);
         dispatch(getData());

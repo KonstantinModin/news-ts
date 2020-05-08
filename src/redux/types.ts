@@ -11,9 +11,8 @@ export interface Article {
     publishedAt: string;
     content: string;
 }
-/* 
-  Type for Formik form
-**/
+
+/** Type for Formik form */
 export interface FormDataType {
     country: string;
     category: string;
@@ -21,6 +20,7 @@ export interface FormDataType {
     pageSize: number;
 }
 
+/** GlobalState */
 export interface GlobalState {
     loading: boolean;
     data: Article[] | null;
