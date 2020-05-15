@@ -1,5 +1,4 @@
 .App .Content {
-    /* margin-top: 9rem; */
     padding: 8.5rem 2px 2px 2px;
     display: flex;
     flex-direction: row;
@@ -28,11 +27,6 @@
     color: cornflowerblue;
 }
 
-.App .Content .Article .body {
-    /* text-align: justify; */
-    /* border: 1px solid red; */
-}
-
 .App .Content .Article .body p {
     text-align: justify;
     font-size: 0.9rem;
@@ -43,4 +37,19 @@
     max-width: 200px;
     float: left;
     margin: 1rem;
+}
+
+@media only screen and (max-width: 960px) {
+    .App .Content {
+        flex-direction: column;
+        padding: 18.7rem 2px 2px 2px;
+    }
+
+    .App .Content .Article {
+        width: 98%;
+    }
+
+    .App .Content .Article .body p {
+        margin: 0.5rem;
+    }
 }

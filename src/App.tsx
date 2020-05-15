@@ -18,7 +18,6 @@ const App: React.FC<{}> = () => {
 	const scrollHandler = () => {
 		const scrollY = window.scrollY;
 		setScroll(scrollY);
-		console.log(scrollY);
 	}
 
 	useEffect(() => {

@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .App .App-header form div input,
 select {
     width: calc(80vw / 4);
@@ -32,4 +33,27 @@ select {
     border-radius: 5px;
     padding: 0 2rem;
     height: 2.5rem;
+}
+
+@media only screen and (max-width: 960px) {
+    .App .App-header form {
+        flex-direction: column;
+    }
+
+    .App .App-header form div input,
+    select {
+        width: 95%;
+    }
+
+    .App .App-header form div {
+        align-items: center;
+    }
+
+    .App .App-header form button {
+        margin: 0.5rem;
+    }
+
+    .App .App-header form div .error {
+        font-size: 0.8rem;
+    }
 }

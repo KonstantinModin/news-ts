@@ -1,12 +1,9 @@
 .App .App-header {
-    /* padding: 0 3rem; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-between; */
     width: 100%;
     height: 8.5rem;
-    /* font-size: calc(10px + 2vmin); */
     position: fixed;
     background-color: #282c34;
     top: 0;
@@ -19,10 +16,32 @@
 
 .App .App-header .top {
     width: 95%;
-    height: 4rem;
+    /* height: 4rem; */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /* font-size: calc(10px + 2vmin); */
+}
+
+@media only screen and (max-width: 960px) {
+    .App .App-header {
+        height: 18.7rem;
+    }
+
+    .App .App-header .top {
+        flex-direction: column;
+    }
+
+    .App .App-header .top h1 {
+        font-size: 1.5rem;
+        margin: 0 0 0.5rem 0;
+    }
+    .App .App-header .top h3 {
+        font-size: 1rem;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .App .App-header.hide {
+        top: -19rem;
+    }
 }
