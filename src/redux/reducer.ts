@@ -34,7 +34,6 @@ const reducer = (state = INITIAL_STATE, action: ActionTypes): GlobalState => {
                 loading: false,
                 data: action.payload,
                 error: null,
-                //everything good with formData here?
             };
         case GET_DATA_FAIL:
             console.log(action.payload);
@@ -43,7 +42,6 @@ const reducer = (state = INITIAL_STATE, action: ActionTypes): GlobalState => {
                 loading: false,
                 data: [],
                 error: action.payload,
-                //everything good with formData here?
             };
         case SUBMIT_FORM:
             return {
