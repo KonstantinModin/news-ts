@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getData } from './redux/actions';
 import { useDispatch } from 'react-redux';
+import { AppDispatch } from './index';
+import { ThunkAction } from "redux-thunk";
 import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
@@ -9,10 +11,14 @@ import './App.css';
 const App: React.FC<{}> = () => {
 	const [scroll, setScroll] = useState(0);
 
-	const dispatch = useDispatch();
+	const dispatch: AppDispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(getData());
+		dispatch<ThunkAction<
+			void,
+			GlobalState,
+			unknown,
+			Action<string>>>(getData());
 	}, [dispatch]);
 
 	const scrollHandler = () => {

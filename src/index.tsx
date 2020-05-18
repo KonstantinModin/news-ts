@@ -13,6 +13,8 @@ const store = createStore(
 		(window as any).__REDUX_DEVTOOLS_EXTENSION__())
 );
 
+export type AppDispatch = typeof store.dispatch;
+
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
