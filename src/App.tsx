@@ -14,11 +14,7 @@ const App: React.FC<{}> = () => {
 	const dispatch: AppDispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch<ThunkAction<
-			void,
-			GlobalState,
-			unknown,
-			Action<string>>>(getData());
+		dispatch<ThunkAction>(getData());
 	}, [dispatch]);
 
 	const scrollHandler = () => {
