@@ -11,10 +11,11 @@ import './App.css';
 const App: React.FC<{}> = () => {
 	const [scroll, setScroll] = useState(0);
 
-	const dispatch: AppDispatch = useDispatch();
+	// const dispatch: AppDispatch = useDispatch();
+	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch<ThunkAction>(getData());
+		dispatch(getData());
 	}, [dispatch]);
 
 	const scrollHandler = () => {
