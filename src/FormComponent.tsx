@@ -1,4 +1,5 @@
 import React from 'react';
+import { country, category, pageSize } from './Options';
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 import { FormDataType } from './redux/types';
 import { FORM_INITIAL_STATE } from './redux/reducer';
@@ -9,7 +10,7 @@ import './FormComponent.css';
 const FormComponent: React.FC<{}> = () => {
     const dispatch = useDispatch();
 
-    const submitHandler = (values: FormDataType, actions: FormikHelpers<FormDataType>) => {        
+    const submitHandler = (values: FormDataType, actions: FormikHelpers<FormDataType>) => {
         dispatch(submitFormAction(values));
         actions.setSubmitting(false);
         dispatch(getData());
