@@ -1,6 +1,5 @@
 import React from 'react';
-import options from './Options';
-import { Options, StringOption, NumberOption } from './Options';
+import Select from './Select';
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 import { FormDataType } from './redux/types';
 import { FORM_INITIAL_STATE } from './redux/reducer';
@@ -25,27 +24,18 @@ const FormComponent: React.FC<{}> = () => {
         return errors
     }
 
-    const renderSelect = (select: keyof Options) => (
-        <div>
-            <label htmlFor={select}>Select country:</label>
-            <Field as="select" name={select}>
-                {(options[select] as StringOption[] | NumberOption[]).map(({ name, value }) => <option key={name} value={value}>{name}</option>)}
-            </Field>
-        </div>
-    )
-
     return (
         <Formik initialValues={FORM_INITIAL_STATE} onSubmit={submitHandler} validate={validate}>
             {formikBag => (
                 <Form>
-                    {renderSelect('country')}
-                    {renderSelect('category')}
+                    <Select select='country' />
+                    <Select select='category' />
                     <div>
                         <label htmlFor="q">Keywords or a phrase to search for: </label>
                         <Field type="text" name="q" />
                         <ErrorMessage className="error" name="q" component="div" />
                     </div>
-                    {renderSelect('pageSize')}
+                    <Select select='pageSize' />
                     <button type="submit" disabled={formikBag.isSubmitting}>Get News</button>
                 </Form>
             )}
