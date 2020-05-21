@@ -1,19 +1,12 @@
-interface Option {
+export interface Option {
     value: string;
-}
-
-export interface StringOption extends Option {
-    name: string;
-}
-
-export interface NumberOption extends Option {
-    name: number;
+    name: string | number;
 }
 
 export interface Options {
-    country: StringOption[];
-    category: StringOption[];
-    pageSize: NumberOption[];
+    country: Option[];
+    category: Option[];
+    pageSize: Option[];
 }
 
 const options: Options = {

@@ -25,6 +25,7 @@ select {
 
 .App .App-header form div .error {
     color: red;
+    margin-top: -3px;
 }
 
 .App .App-header form button {
