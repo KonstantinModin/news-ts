@@ -1,12 +1,15 @@
 import React from 'react';
+import './ErrorIndicator.css';
 
-const ErrorIndicator = ({ error }: { error: { message?: string, stack?: string } }) => {
-    console.log('ind', error.message)
+type ErrorIndicatorProps = { error: { message?: string, stack?: string, config?: {} } };
+
+const ErrorIndicator: React.FC<ErrorIndicatorProps> = ({ error: { message, stack, config } }) => {
     return (
-        <div>
+        <div className="ErrorIndicator">
             <h1>Error happend</h1>
-            <h3>{error.message}</h3>
-            <h6>{error.stack}</h6>
+            <h3>{message}</h3>
+            <h6>{stack}</h6>
+            <p>{JSON.stringify(config, null, 2).slice(1, -1)}</p>
         </div>
     )
 }
