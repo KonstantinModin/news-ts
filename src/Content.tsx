@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { GlobalState } from './redux/types';
 import Spinner from './Spinner';
 import './Content.css';
+import ErrorIndicator from './ErrorIndicator';
 
 const Content: React.FC<{}> = () => {
 
@@ -12,7 +13,7 @@ const Content: React.FC<{}> = () => {
 
     return (
         <div className="Content">
-            {loading ? (<Spinner />) : error ? <h2>Error happend</h2> : (
+            {loading ? (<Spinner />) : error ? <ErrorIndicator error={error} /> : (
                 data && data.map(({ author, title, url, description, urlToImage: img, publishedAt, content }, i) => (
                     <div key={i} className='Article'>
                         <h3>{title}</h3>
