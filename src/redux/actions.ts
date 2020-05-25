@@ -12,8 +12,7 @@ import { Action } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { GlobalState } from "./types";
 
-// import axios from "axios";
-import NewsAPI from "newsapi";
+import axios from "axios";
 
 const getDataRequestAction = (): ActionTypes => ({
     type: GET_DATA_REQUEST,
@@ -42,27 +41,17 @@ export const getData = (): ThunkAction<
 > => async (dispatch, getState) => {
     dispatch(getDataRequestAction());
     try {
-        const newsapi = new NewsAPI("9c84424f051843108bca2fea4726ae0c");
+        const { formData } = getState();
 
-        const {
-            formData: { country, category, q, pageSize },
-        } = getState();
-        const response = await newsapi.v2.topHeadlines({
-            q,
-            category,
-            pageSize,
-            country,
-        });
-
-        // const params = Object.entries(formData)
-        //     .filter((e) => ("" + e[1]).trim())
-        //     .map((a) => a.join("="))
-        //     .join("&");
+        const params = Object.entries(formData)
+            .filter((e) => ("" + e[1]).trim())
+            .map((a) => a.join("="))
+            .join("&");
 
         // todo fetch config
-        // const url = `https://newsapi.org/v2/top-headlines?${params}&apiKey=9c84424f051843108bca2fea4726ae0c`;
+        const url = `https://newsapi.org/v2/top-headlines?${params}&apiKey=9c84424f051843108bca2fea4726ae0c`;
 
-        // const response = await axios.get(url);
+        const response = await axios.get(url);
         console.log(response);
         dispatch(getDataSuccessAction(response.data.articles));
     } catch (error) {

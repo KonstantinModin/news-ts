@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getData } from './redux/actions';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from './index';
-import { ThunkAction } from "redux-thunk";
+// import { AppDispatch } from './index';
+// import { ThunkAction } from "redux-thunk";
 import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
