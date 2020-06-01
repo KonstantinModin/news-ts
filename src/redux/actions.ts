@@ -52,7 +52,7 @@ export const getData = (): ThunkAction<
         const url = `https://newsapi.org/v2/top-headlines?${params}&apiKey=9c84424f051843108bca2fea4726ae0c`;
 
         const response = await axios.get(url);
-        console.log(response);
+        // console.log(response);
         dispatch(getDataSuccessAction(response.data.articles));
     } catch (error) {
         console.error("Something went wrong");
