@@ -6,7 +6,7 @@
 
 -   Fetching news selecting country and/or category and/or keywords
 -   Selecting number of news on page-
--   todo: Responsive design
+-   Responsive design
 
 ## Main libraries
 
@@ -26,7 +26,7 @@
 
 ## Version History
 
--   0.1 - Initial Release
+-   1.0 - Initial Release
 
 ## This project on Web
 
