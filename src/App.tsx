@@ -11,7 +11,13 @@ import './App.css';
 const App: React.FC<{}> = () => {
 	const [scroll, setScroll] = useState(0);
 
-	// const dispatch: AppDispatch = useDispatch();
+	// !!!!
+	//
+	// 	TODO: update correct type of dispatch and set correct type for getData
+	// 	const dispatch: AppDispatch = useDispatch();
+	//
+	// !!!
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {
