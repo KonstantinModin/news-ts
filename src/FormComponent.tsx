@@ -24,6 +24,10 @@ const FormComponent: React.FC<{}> = () => {
         return errors
     }
 
+    // 
+    // TODO : submit on select onChange / types
+    // 
+
     return (
         <Formik initialValues={FORM_INITIAL_STATE} onSubmit={submitHandler} validate={validate}>
             {formikBag => (
