@@ -15,6 +15,7 @@
 .App .App-header form div input,
 select {
     width: calc(80vw / 4);
+    outline: none;
 }
 
 .App .App-header form div label {

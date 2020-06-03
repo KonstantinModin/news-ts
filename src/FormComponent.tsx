@@ -11,10 +11,14 @@ const FormComponent: React.FC<{}> = () => {
     const dispatch = useDispatch();
 
     const submitHandler = (values: FormDataType, actions: FormikHelpers<FormDataType>) => {
-        dispatch(submitFormAction(values));
+
+        // disable auto submit if no params
+        if (values.category || values.country || values.q) {
+            dispatch(submitFormAction(values));
+            dispatch(getData());
+        }
+
         actions.setSubmitting(false);
-        dispatch(getData());
-        console.log('handler');
     }
 
     const validate = (values: FormDataType) => {
