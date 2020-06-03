@@ -14,6 +14,7 @@ const FormComponent: React.FC<{}> = () => {
         dispatch(submitFormAction(values));
         actions.setSubmitting(false);
         dispatch(getData());
+        console.log('handler');
     }
 
     const validate = (values: FormDataType) => {
@@ -32,14 +33,14 @@ const FormComponent: React.FC<{}> = () => {
         <Formik initialValues={FORM_INITIAL_STATE} onSubmit={submitHandler} validate={validate}>
             {formikBag => (
                 <Form>
-                    <Select select='country' />
-                    <Select select='category' />
+                    <Select select='country' bag={formikBag} />
+                    <Select select='category' bag={formikBag} />
                     <div>
                         <label htmlFor="q">Keywords or a phrase to search for: </label>
                         <Field type="text" name="q" />
                         <ErrorMessage className="error" name="q" component="div" />
                     </div>
-                    <Select select='pageSize' />
+                    <Select select='pageSize' bag={formikBag} />
                     <button type="submit" disabled={formikBag.isSubmitting}>Get News</button>
                 </Form>
             )}
